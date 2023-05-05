@@ -119,8 +119,6 @@ a{
     text-decoration: none;
     font-weight: 400;
     font-size: 12px;
-    line-height: 1.166;
-    letter-spacing: 0.02em;
     color: var(--title-text-colour);
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -157,6 +155,9 @@ a{
     padding-left: 40px;
     padding-top: 80px;
     padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 284px;
 }
 .mobile-menu-button{
     position: absolute;
@@ -170,9 +171,6 @@ a{
     border-radius: 50%;
     background: rgba(231, 233, 252, 0.1);
     border: 1px solid rgba(46, 47, 66, 0.1);
-}
-.mobile-menu-nav{
-    margin-bottom: 284px;
 }
 .mobile-menu-nav .link-menu{
     font-family: 'Roboto';
@@ -298,6 +296,7 @@ a{
     position: absolute;
     top: 50%;
     left: 50%;
+
 
     transform: translate(-50%, -50%);
     background: #FCFCFC;
@@ -590,10 +589,9 @@ a{
 }
 .social-list {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 8px;
-    margin-left: 16px;
-    margin-right: 16px;
+    gap: 24px;
 }
 .social-list-icon {
     fill: var(--button-color);
@@ -883,8 +881,7 @@ a{
 }
 @media screen and (max-width: 427px){
     .modal{
-        width: 100%;
-        height: 100%;
+        width: calc((100%*392)/428);
     }
 }
 @media screen and (min-width: 428px){
@@ -902,6 +899,7 @@ a{
     }
     .modal {
         width: 392px;
+        height: 584px;
     }
 }
 @media screen and (max-width: 767px){
@@ -926,14 +924,12 @@ a{
     .mobile-menu-nav .link-active {
         color: var(--ocean);
     }
-    .hero-mobile{
-        padding: 112px 54px;
-    }
     .main-title{
         margin-bottom: 72px;
     }
     .section-one-index {
         max-width: 428px;
+        padding: 112px 0;
         background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url('../images/hero/hero.jpg');
     }
     @media (min-device-pixel-ratio: 2),
@@ -960,9 +956,6 @@ a{
     .about-title-two {
         text-align: center;
     }
-    .about-text {
-        text-align: center;
-    }
     .item-about:not(:last-child) {
         margin-bottom: 72px;
     }
@@ -972,7 +965,7 @@ a{
         row-gap: 72px;
     }
     .customers-item {
-        width: calc((100% - 32px) / 2);
+        width: calc((100% - 16px) / 2);
     }
     .container-footer {
         flex-direction: column;
@@ -1010,6 +1003,9 @@ a{
     }
     .container-card-portfolio .item {
         width: 100%;
+    }
+    .footer {
+        padding: 96px 0;
     }
 }
 
@@ -1049,6 +1045,7 @@ a{
     }
     .section-one-index {
         max-width: 768px;
+        padding: 112px 0;
         background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url('../images/hero/hero-tablet/hero.jpg');
     }
     @media (min-device-pixel-ratio: 2),
@@ -1058,9 +1055,6 @@ a{
         .section-one-index {
             background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url('../images/hero/hero-tablet/hero@2x.jpg');
         }
-    }
-    .hero-mobile {
-        padding: 112px 136px;
     }
     .main-title {
         font-size: 56px;
@@ -1094,6 +1088,8 @@ a{
         width: calc((100%-24px)/2px);
     }
     .customers-list {
+        margin: 0 auto;
+        width: 552px;
         flex-wrap: wrap;
         column-gap: 24px;
         row-gap: 72px;
@@ -1101,11 +1097,15 @@ a{
     .customers-item {
         width: calc((100% - 48px) / 3);
     }
+    .footer{
+        padding-top: 96px;
+        padding-bottom: 96px;
+    }
     .container-footer {
+        width: 582px;
         flex-wrap: wrap;
         align-items: baseline;
         gap: 72px 24px;
-        padding-left: 108px;
     }
     .footer .footer-p {
         min-width: 264px;
@@ -1144,6 +1144,10 @@ a{
     .modal-form-input {
     padding-left: 34px;
     }
+    .address .link {
+        font-size: 12px;
+        line-height: 1.166;
+    }
     .about-icons {
         display: none;
     }
@@ -1159,9 +1163,6 @@ a{
     .team{
         padding: 96px 0;
     }
-    .footer {
-        padding: 96px 0;
-    }
 }
 
 @media screen and (min-width: 1158px) {
@@ -1174,6 +1175,12 @@ a{
     .conteiner-header {
         justify-content: space-between;
         margin: 0 auto;
+    }
+    .address .link {
+        font-size: 16px;
+        line-height: 1.5;
+        padding-top: 24px;
+        padding-bottom: 24px;
     }
     .address-list {
         display: flex;
@@ -1272,6 +1279,7 @@ a{
         padding: 100px 0;
     }
     .customers-list {
+        width: 1128px;
         flex-wrap: nowrap;
     }
     .footer .logostyle {
